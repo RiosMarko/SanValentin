@@ -16,4 +16,5 @@ noButton.addEventListener("mouseover", function() {
 
 document.getElementById("yes").addEventListener("click", function() {
     alert("Yay! 💖💖💖💖");
+    alert("Te veo el 14 😉");
 });
