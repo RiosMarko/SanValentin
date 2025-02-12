@@ -1,3 +1,16 @@
+
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = (Math.random() * 1 + 2) + 's'; 
+    heart.style.zIndex = -1; 
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 4000); 
+}
+setInterval(createHeart, 150); 
+
+
 let noButton = document.getElementById("no");
 
 window.onload = function() {
@@ -15,20 +28,20 @@ noButton.addEventListener("mouseover", function() {
 });
 
 document.getElementById("yes").addEventListener("click", function() {
-    alert("Yay! 💖💖💖💖");
-    alert("Te veo el 14 😉");
+    Swal.fire({
+        title: "¡Sabía que dirías que sí! 💖",
+        text: "Nos vemos el 14💕",
+        imageUrl: "https://media.giphy.com/media/l0Exk8EUzSLsrErEQ/giphy.gif", 
+        imageWidth: 200,
+        imageHeight: 200,
+        background: "#ffe4e1",
+        color: "#d63384",
+        confirmButtonColor: "#ff69b4",
+        confirmButtonText: "¡Gracias! 💕"
+    }).then(() => {
+        location.reload(); // Recarga la página al hacer clic en el botón de confirmación
+    });
 });
-
-function createHeart() {
-    const heart = document.createElement('div');
-    heart.classList.add('heart');
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
-    heart.style.zIndex = -1; 
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 5000);
-}
-setInterval(createHeart, 200);
 
 
 
